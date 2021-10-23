@@ -1,3 +1,7 @@
+package DebugPractice;
+
+import edu.princeton.cs.algs4.In;
+
 /**
  * Created by jug on 1/22/18.
  */

@@ -1,12 +1,14 @@
+package DebugPractice;
+
 /**
  * Exercise for learning how the debug, breakpoint, and step-into
  * feature work.
  */
 public class DebugExercise1 {
     public static int divideThenRound(int top, int bottom) {
-        int quotient = top / bottom;
-        int result = Math.round(quotient);
-        return result;
+        double quotient = Double.valueOf(top + "") / Double.valueOf(bottom + "");
+        Long result = Math.round(quotient);
+        return result.intValue();
     }
 
     public static void main(String[] args) {
