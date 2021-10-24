@@ -58,7 +58,7 @@ public class TestCalcNetForceExertedByXY {
 
         checkEquals(133.4, round(xNetForce, 2), "calcNetForceExertedByX()");
         checkEquals(0.0, round(yNetForce, 2), "calcNetForceExertedByY()");
-    
+
         System.out.println("Running test again, but with array that contains the target planet.");
 
         planets = new Planet[]{p1, p2, p3, p4};
