@@ -76,10 +76,4 @@ public class Planet {
         StdDraw.show();
     }
 
-    @Override
-    public String toString() {
-        return String.format("%11.4e %11.4e %11.4e %11.4e %11.4e %12s",
-                xxPos, yyPos, xxVel,
-                yyVel, mass, imgFileName);
-    }
 }
