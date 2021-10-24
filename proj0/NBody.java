@@ -32,7 +32,7 @@ public class NBody {
         for (Planet planet : planets) {
             planet.draw();
         }
-        for (int i = 0; i < T; i++) {
+        for (int i = 0; i < T; i += dt) {
             double[] xForces = new double[planets.length];
             double[] yForces = new double[planets.length];
             for (int i1 = 0; i1 < planets.length; i1++) {
