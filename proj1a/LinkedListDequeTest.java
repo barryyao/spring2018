@@ -1,5 +1,3 @@
-import proj1a.LinkedListDeque;
-
 /** Performs some basic linked list tests. */
 public class LinkedListDequeTest {
 	
@@ -38,7 +36,7 @@ public class LinkedListDequeTest {
 	public static void addIsEmptySizeTest() {
 		System.out.println("Running add/isEmpty/Size test.");
 		System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
-		proj1a.LinkedListDeque<String> lld1 = new proj1a.LinkedListDeque<String>();
+		LinkedListDeque<String> lld1 = new LinkedListDeque<String>();
 
 		boolean passed = checkEmpty(true, lld1.isEmpty());
 

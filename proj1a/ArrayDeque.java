@@ -1,5 +1,3 @@
-package proj1a;
-
 public class ArrayDeque<T> {
 
     private T[] array;

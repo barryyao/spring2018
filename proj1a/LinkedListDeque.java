@@ -1,5 +1,3 @@
-package proj1a;
-
 public class LinkedListDeque<T> {
 
     private class ObjectNode {
