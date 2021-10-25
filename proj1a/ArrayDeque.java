@@ -20,6 +20,17 @@ public class ArrayDeque<T> {
         size += 1;
     }
 
+    public static void main(String[] args) {
+        ArrayDeque arrayDeque = new ArrayDeque();
+        for (int i = 0; i < 100; i++) {
+            arrayDeque.addFirst(new Object());
+        }
+        for (int i = 0; i < 100; i++) {
+            arrayDeque.removeLast();
+            arrayDeque.removeFirst();
+        }
+    }
+
 //    public void addLast(T item): Adds an item of type T to the back of the deque.
     public void addLast(T item) {
         if (size == array.length) {
@@ -30,7 +41,7 @@ public class ArrayDeque<T> {
     }
 
     private void resize(int capability) {
-        T[] newArray = (T[]) new Object[100];
+        T[] newArray = (T[]) new Object[capability];
         System.arraycopy(array, 0, newArray, 0, size);
         array = newArray;
     }
