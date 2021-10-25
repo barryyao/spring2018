@@ -4,7 +4,7 @@ public class ArrayDeque<T> {
     private int size = 0;
 
     public ArrayDeque() {
-        array = (T[]) new Object[100];
+        array = (T[]) new Object[8];
         size = 0;
     }
 
@@ -13,7 +13,7 @@ public class ArrayDeque<T> {
         if (size == array.length) {
             resize(size * 2);
         }
-        for (int i = size; i > 0; i --) {
+        for (int i = size; i > 0; i--) {
             array[i] = array[i - 1];
         }
         array[0] = item;
@@ -45,7 +45,8 @@ public class ArrayDeque<T> {
         return size;
     }
 
-//    public void printDeque(): Prints the items in the deque from first to last, separated by a space. Once all the items have been printed, print out a new line.
+//    public void printDeque(): Prints the items in the deque from first to last,
+//    separated by a space. Once all the items have been printed, print out a new line.
     public void printDeque() {
         for (int i = 0; i < size; i++) {
             System.out.println(this.get(i));
@@ -53,7 +54,8 @@ public class ArrayDeque<T> {
         System.out.println();
     }
 
-//    public T removeFirst(): Removes and returns the item at the front of the deque. If no such item exists, returns null.
+//    public T removeFirst(): Removes and returns the item at the front of the deque.
+//    If no such item exists, returns null.
     public T removeFirst() {
         if (size == 0) {
             return null;
@@ -69,7 +71,8 @@ public class ArrayDeque<T> {
         return firstItem;
     }
 
-//    public T removeLast(): Removes and returns the item at the back of the deque. If no such item exists, returns null.
+//    public T removeLast(): Removes and returns the item at the back of the deque.
+//    If no such item exists, returns null.
     public T removeLast() {
         if (size == 0) {
             return null;
@@ -80,7 +83,9 @@ public class ArrayDeque<T> {
         return lastItem;
     }
 
-//    public T get(int index): Gets the item at the given index, where 0 is the front, 1 is the next item, and so forth. If no such item exists, returns null. Must not alter the deque!
+//    public T get(int index): Gets the item at the given index, where 0 is the front,
+//    1 is the next item, and so forth. If no such item exists, returns null.
+//    Must not alter the deque!
     public T get(int index) {
         if (index > size) {
             return null;

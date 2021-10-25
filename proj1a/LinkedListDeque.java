@@ -23,13 +23,6 @@ public class LinkedListDeque<T> {
         this.sentinel.prev = sentinel;
     }
 
-    // Creates a deep copy of other
-    public LinkedListDeque(LinkedListDeque other) {
-        LinkedListDeque linkedListDeque = new LinkedListDeque();
-        for (int i = 0; i < other.size(); i++) {
-            linkedListDeque.addLast(other.get(i));
-        }
-    }
 
     //Same as get, but uses recursion.
     public T getRecursive(int index) {
@@ -69,7 +62,8 @@ public class LinkedListDeque<T> {
         return size;
     }
 
-//    public void printDeque(): Prints the items in the deque from first to last, separated by a space. Once all the items have been printed, print out a new line.
+//    public void printDeque(): Prints the items in the deque from first to last,
+//    separated by a space. Once all the items have been printed, print out a new line.
     public void printDeque() {
         ObjectNode objectNode = sentinel.next;
         while (objectNode.item != null) {
@@ -79,7 +73,8 @@ public class LinkedListDeque<T> {
         System.out.println();
     }
 
-//    public T removeFirst(): Removes and returns the item at the front of the deque. If no such item exists, returns null.
+//    public T removeFirst(): Removes and returns the item at the front of the deque.
+//    If no such item exists, returns null.
     public T removeFirst() {
         ObjectNode next = this.sentinel.next;
         sentinel.next = next.next;
@@ -88,7 +83,8 @@ public class LinkedListDeque<T> {
         return next.item;
     }
 
-//    public T removeLast(): Removes and returns the item at the back of the deque. If no such item exists, returns null.
+//    public T removeLast(): Removes and returns the item at the back of the deque.
+//    If no such item exists, returns null.
     public T removeLast() {
         ObjectNode prev = this.sentinel.prev;
         sentinel.prev = prev.prev;
@@ -97,11 +93,13 @@ public class LinkedListDeque<T> {
         return prev.item;
     }
 
-//    public T get(int index): Gets the item at the given index, where 0 is the front, 1 is the next item, and so forth. If no such item exists, returns null. Must not alter the deque!
+//    public T get(int index): Gets the item at the given index, where 0 is the front,
+//    1 is the next item, and so forth. If no such item exists,
+//    returns null. Must not alter the deque!
     public T get(int index) {
-        ObjectNode temp = this.sentinel;
+        ObjectNode temp = this.sentinel.next;
         for (int i = 0; i < index; i++) {
-            temp = this.sentinel.next;
+            temp = temp.next;
         }
         return temp.item;
     }
