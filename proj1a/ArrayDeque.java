@@ -20,16 +20,6 @@ public class ArrayDeque<T> {
         size += 1;
     }
 
-    public static void main(String[] args) {
-        ArrayDeque arrayDeque = new ArrayDeque();
-        for (int i = 0; i < 100; i++) {
-            arrayDeque.addFirst(new Object());
-        }
-        for (int i = 0; i < 100; i++) {
-            arrayDeque.removeLast();
-            arrayDeque.removeFirst();
-        }
-    }
 
 //    public void addLast(T item): Adds an item of type T to the back of the deque.
     public void addLast(T item) {
@@ -69,7 +59,7 @@ public class ArrayDeque<T> {
 //    If no such item exists, returns null.
     public T removeFirst() {
         if (size == 0) {
-            return null;
+            throw new ArrayIndexOutOfBoundsException();
         }
         if (size == array.length / 4) {
             resize(array.length / 2);
@@ -86,7 +76,7 @@ public class ArrayDeque<T> {
 //    If no such item exists, returns null.
     public T removeLast() {
         if (size == 0) {
-            return null;
+            throw new ArrayIndexOutOfBoundsException();
         }
         T lastItem = array[size - 1];
         array[size - 1] = null;
