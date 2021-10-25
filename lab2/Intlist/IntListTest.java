@@ -1,5 +1,5 @@
 package Intlist;
-
+import Intlist.IntList;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
