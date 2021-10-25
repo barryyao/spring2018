@@ -59,7 +59,7 @@ public class ArrayDeque<T> {
 //    If no such item exists, returns null.
     public T removeFirst() {
         if (size == 0) {
-            throw new ArrayIndexOutOfBoundsException();
+            return null;
         }
         if (size == array.length / 4) {
             resize(array.length / 2);
@@ -71,13 +71,13 @@ public class ArrayDeque<T> {
         size -= 1;
         return firstItem;
     }
-    
+
 
 //    public T removeLast(): Removes and returns the item at the back of the deque.
 //    If no such item exists, returns null.
     public T removeLast() {
         if (size == 0) {
-            throw new ArrayIndexOutOfBoundsException();
+            return null;
         }
         T lastItem = array[size - 1];
         array[size - 1] = null;
