@@ -65,12 +65,13 @@ public class ArrayDeque<T> {
             resize(array.length / 2);
         }
         T firstItem = array[0];
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size - 1; i++) {
             array[i] = array[i + 1];
         }
         size -= 1;
         return firstItem;
     }
+    
 
 //    public T removeLast(): Removes and returns the item at the back of the deque.
 //    If no such item exists, returns null.
