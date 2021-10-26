@@ -13,9 +13,7 @@ public class ArrayDeque<T> {
         if (size == array.length) {
             resize(size * 2);
         }
-        for (int i = size; i > 0; i--) {
-            array[i] = array[i - 1];
-        }
+        System.arraycopy(array, 0, array, 1, size);
         array[0] = item;
         size += 1;
     }
