@@ -81,8 +81,8 @@ public class ArrayDeque<T> {
             return null;
         }
         T lastItem = array[size - 1];
-        size -= 1;
         array[size - 1] = null;
+        size -= 1;
         if (size == array.length / 4) {
             resize(array.length / 2);
         }
