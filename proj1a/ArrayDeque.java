@@ -61,13 +61,15 @@ public class ArrayDeque<T> {
             return null;
         }
         T firstItem = array[0];
-        System.arraycopy(array,1, array,0, size);
+        System.arraycopy(array,1, array,0, size - 1);
+        array[size - 1] = null;
         size -= 1;
         if (size == array.length / 4 && array.length / 2 != 0) {
             resize(array.length / 2);
         }
         return firstItem;
     }
+    
 
 
 //    public T removeLast(): Removes and returns the item at the back of the deque.
