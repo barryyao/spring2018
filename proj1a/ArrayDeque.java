@@ -16,7 +16,7 @@ public class ArrayDeque<T> {
 
 //    public void addLast(T item): Adds an item of type T to the back of the deque.
     public void addLast(T item) {
-        add(size - 1, item);
+        add(size, item);
     }
 
     private T remove(int index) {
@@ -34,7 +34,7 @@ public class ArrayDeque<T> {
         }
         return result;
     }
-    
+
     private void add(int index, T item) {
         for (int i = size - 1; i > index; i--) {
             array[i] = array[i - 1];
