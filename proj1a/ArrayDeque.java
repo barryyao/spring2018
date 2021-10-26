@@ -36,7 +36,7 @@ public class ArrayDeque<T> {
     }
 
     private void add(int index, T item) {
-        for (int i = size - 1; i > index; i--) {
+        for (int i = size; i > index; i--) {
             array[i] = array[i - 1];
         }
         array[index] = item;
