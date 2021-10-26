@@ -67,7 +67,7 @@ public class ArrayDeque<T> {
             array[i] = array[i + 1];
         }
         size -= 1;
-        if (size == array.length / 4) {
+        if (size == array.length / 4 && array.length / 2 != 0) {
             resize(array.length / 2);
         }
         return firstItem;
@@ -83,7 +83,7 @@ public class ArrayDeque<T> {
         T lastItem = array[size - 1];
         array[size - 1] = null;
         size -= 1;
-        if (size == array.length / 4) {
+        if (size == array.length / 4 && array.length / 2 != 0) {
             resize(array.length / 2);
         }
         return lastItem;
