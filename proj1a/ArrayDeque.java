@@ -66,10 +66,10 @@ public class ArrayDeque<T> {
         for (int i = 0; i < size - 1; i++) {
             array[i] = array[i + 1];
         }
+        size -= 1;
         if (size == array.length / 4) {
             resize(array.length / 2);
         }
-        size -= 1;
         return firstItem;
     }
 
@@ -80,12 +80,12 @@ public class ArrayDeque<T> {
         if (size == 0) {
             return null;
         }
+        T lastItem = array[size - 1];
+        size -= 1;
+        array[size - 1] = null;
         if (size == array.length / 4) {
             resize(array.length / 2);
         }
-        T lastItem = array[size - 1];
-        array[size - 1] = null;
-        size -= 1;
         return lastItem;
     }
 
