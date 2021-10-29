@@ -9,7 +9,7 @@ public class PalindromeFinder {
             String word = in.readString();
             if (word.length() >= minLength && palindrome.isPalindrome(word, new OffByOne())) {
                 System.out.println(word);
-                i ++;
+                i++;
             }
         }
         System.out.println(i);
