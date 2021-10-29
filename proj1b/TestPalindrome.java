@@ -19,7 +19,7 @@ public class TestPalindrome {
     }
 
     @Test
-    public void TestPalindrome() {
+    public void testIsPalindrome() {
         assertTrue(palindrome.isPalindrome("racecar"));
         assertTrue(palindrome.isPalindrome("noon"));
         assertTrue(palindrome.isPalindrome("a"));
@@ -31,7 +31,7 @@ public class TestPalindrome {
 
     }
     @Test
-    public void TestPalindrome2() {
+    public void testIsPalindrome2() {
         assertTrue(palindrome.isPalindrome("sbdecar", offByOne));
         assertTrue(palindrome.isPalindrome("flake", offByOne));
         assertTrue(palindrome.isPalindrome("a", offByOne));
@@ -43,7 +43,7 @@ public class TestPalindrome {
 
     }
     @Test
-    public void TestPalindrome3() {
+    public void testIsPalindrome3() {
         assertTrue(palindrome.isPalindrome("tceecar", offByN));
         assertTrue(palindrome.isPalindrome("glaje", offByN));
         assertTrue(palindrome.isPalindrome("d", offByN));
@@ -52,6 +52,6 @@ public class TestPalindrome {
         assertFalse(palindrome.isPalindrome("horse", offByN));
         assertFalse(palindrome.isPalindrome("rancor", offByN));
         assertFalse(palindrome.isPalindrome("aaaaab", offByN));
-
     }
+
 }
