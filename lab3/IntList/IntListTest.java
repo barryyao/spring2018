@@ -73,7 +73,10 @@ public class IntListTest {
     @Test
     public void testReverse() {
         IntList A = IntList.of(6, 5, 4, 3, 2, 1);
+        IntList B = IntList.of(7, 6, 5, 4, 3, 2, 1);
         assertEquals(IntList.of(1, 2, 3, 4, 5, 6), IntList.reverse(A));
+        assertEquals(IntList.of(1, 2, 3, 4, 5, 6, 7), IntList.reverse(B));
+        assertNotEquals(IntList.of(1, 2, 3, 4, 5, 6, 7), IntList.reverse(A));
         assertNotEquals(A, IntList.reverse(A));
         assertEquals(null, IntList.reverse(null));
     }
