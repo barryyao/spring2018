@@ -13,7 +13,7 @@ public class TestArrayDequeGold {
         StudentArrayDeque<Integer> sad1 = new StudentArrayDeque<>();
         LinkedList<Integer> list = new LinkedList<>();
         String errorMsg = "";
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 100; i++) {
             double uniform1 = StdRandom.uniform();
             if (uniform1 > 0.75) {
                 sad1.addFirst(i);
@@ -48,7 +48,7 @@ public class TestArrayDequeGold {
         ArrayDequeSolution<Integer> sad1 = new ArrayDequeSolution<>();
         LinkedList<Integer> list = new LinkedList<>();
         String errorMsg = "";
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 100; i++) {
             double uniform1 = StdRandom.uniform();
             if (uniform1 > 0.75) {
                 sad1.addFirst(i);
