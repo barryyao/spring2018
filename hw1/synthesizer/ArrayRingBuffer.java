@@ -27,16 +27,6 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
         this.last = 0;
     }
 
-    @Override
-    public int capacity() {
-        return this.capacity;
-    }
-
-    @Override
-    public int fillCount() {
-        return this.fillCount;
-    }
-
     /**
      * Adds x to the end of the ring buffer. If there is no room, then
      * throw new RuntimeException("Ring buffer overflow"). Exceptions
@@ -83,6 +73,9 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     @Override
     public T peek() {
         // TODO: Return the first item. None of your instance variables should change.
+        if (isEmpty()) {
+            throw new RuntimeException("Ring buffer underflow");
+        }
         return rb[last];
     }
 
