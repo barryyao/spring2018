@@ -3,11 +3,6 @@ package hw2;
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdStats;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
-
 public class PercolationStats {
 
     private int T;
@@ -15,7 +10,7 @@ public class PercolationStats {
 
     public PercolationStats(int N, int T, PercolationFactory pf) {
         // perform T independent experiments on an N-by-N grid
-        if (N < 0 || T < 0) {
+        if (N <= 0 || T <= 0) {
             throw new IllegalArgumentException();
         }
         this.T = T;
@@ -29,10 +24,10 @@ public class PercolationStats {
             StdRandom.shuffle(sites);
             int openSiteNum = 0;
             for (int i1 = 0; i1 < sites.length && !percolation.percolates(); i1++) {
-                percolation.open(sites[i1] / N,sites[i1] % N);
+                percolation.open(sites[i1] / N, sites[i1] % N);
                 openSiteNum++;
             }
-            percolatedRates[i] =  (double)openSiteNum / (N * N);
+            percolatedRates[i] = (double) openSiteNum / (N * N);
         }
     }
     public double mean()  {
@@ -53,7 +48,8 @@ public class PercolationStats {
     }
 
     public static void main(String[] args) {
-        PercolationStats percolationStats = new PercolationStats(100, 100, new PercolationFactory());
+        PercolationStats percolationStats = new PercolationStats(100,
+                100, new PercolationFactory());
         double mean = percolationStats.mean();
         System.out.println("mean: " + mean);
         double stddev = percolationStats.stddev();

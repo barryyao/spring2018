@@ -2,9 +2,6 @@ package hw2;
 
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Percolation {
     private int N;
     private int openSitesNO;
@@ -17,7 +14,7 @@ public class Percolation {
         this.N = N;
         // create N-by-N grid, with all sites initially blocked
         if (N <= 0) {
-            throw new IndexOutOfBoundsException(N);
+            throw new IllegalArgumentException();
         }
         gridSize = N * (N + 1) + 1;
         openSitesNO = 0;
@@ -35,10 +32,13 @@ public class Percolation {
 
     public void open(int row, int col) {
         // open the site (row, col) if it is not open already
+        if (checkRowAndCol(row, col)) {
+            throw new IndexOutOfBoundsException();
+        }
         int i = xyToIndex(row, col);
-        if (openArray[i] == false) {
+        if (!openArray[i]) {
             openArray[i] = true;
-            openSitesNO ++;
+            openSitesNO++;
         }
         if (i < N) {
             openUF.union(virtualTop, i);
@@ -51,16 +51,25 @@ public class Percolation {
 
     public boolean isOpen(int row, int col) {
         // is the site (row, col) open?
+        if (checkRowAndCol(row, col)) {
+            throw new IndexOutOfBoundsException();
+        }
         int i = xyToIndex(row, col);
         return openArray[i];
     }
 
     public boolean isFull(int row, int col) {
+        if (checkRowAndCol(row, col)) {
+            throw new IndexOutOfBoundsException();
+        }
         // is the site (row, col) full?
         int i = xyToIndex(row, col);
         return openUF.connected(i, virtualTop);
     }
 
+    private boolean checkRowAndCol(int row, int col) {
+        return row < N && row >= 0 && col < N && col >= 0;
+    }
     public int numberOfOpenSites() {
         // number of open sites
         return openSitesNO;
@@ -74,17 +83,6 @@ public class Percolation {
             }
         }
         return false;
-    }
-
-    public static void main(String[] args)  {
-        // use for unit testing (not required)
-        Percolation p = new Percolation(10);
-        for (int i = 0; i < 9; i++) {
-            p.open(i, 0);
-        }
-        boolean full = p.percolates();
-        System.out.println(full);
-
     }
 
     private int xyToIndex(int x, int y) {
