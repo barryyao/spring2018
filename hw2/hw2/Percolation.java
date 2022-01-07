@@ -32,7 +32,7 @@ public class Percolation {
 
     public void open(int row, int col) {
         // open the site (row, col) if it is not open already
-        if (checkRowAndCol(row, col)) {
+        if (!checkRowAndCol(row, col)) {
             throw new IndexOutOfBoundsException();
         }
         int i = xyToIndex(row, col);
@@ -51,7 +51,7 @@ public class Percolation {
 
     public boolean isOpen(int row, int col) {
         // is the site (row, col) open?
-        if (checkRowAndCol(row, col)) {
+        if (!checkRowAndCol(row, col)) {
             throw new IndexOutOfBoundsException();
         }
         int i = xyToIndex(row, col);
@@ -59,7 +59,7 @@ public class Percolation {
     }
 
     public boolean isFull(int row, int col) {
-        if (checkRowAndCol(row, col)) {
+        if (!checkRowAndCol(row, col)) {
             throw new IndexOutOfBoundsException();
         }
         // is the site (row, col) full?
